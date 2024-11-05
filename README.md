@@ -1,40 +1,26 @@
-# Catalog App
+# Carousel App
 
-Welcome to the Catalog App! This application provides a comprehensive overview of various categories, including animals, vegetables, fruits, bikes, and cars. It is designed to offer detailed information and a user-friendly experience for browsing through these categories.
+Welcome to the Carousel App! This application provides a comprehensive overview of various categories, including sports, plant, food, shoe, and country.
 
 ## Features
 
 1. **Top Carousel**
-  - Displays the current catalog type (e.g., animals, vegetables, fruits, bikes, cars).
-  - Changing the carousel updates the list items and catalog type.
+  - Displays the current carousel type (e.g., SPORTS, PLANT, FOOD, SHOE, COUNTRY).
+  - Sliding the carousel updates the list items and carousel type.
 
 2. **Search Functionality**
-  - Allows users to search within the catalog range.
+  - Allows users to search within the carousel list.
   - The search box floats and remains accessible when the user scrolls upward, and the top carousel collapses.
 
-3. **Catalog Analysis**
-  - Users can view the current analysis of a catalog.
+3. **Carousel Analysis**
+  - Users can view the current analysis of a carousel.
   - Analysis includes:
-    - Catalog range count.
-    - Maximum three-character occurrence value.
-
-## Usage
-
-### Carousel Navigation
-- Scroll through the top carousel to select a different catalog type.
-- The list items will update according to the selected catalog.
-
-### Searching the Catalog
-- Use the search box to find specific items within the catalog range.
-- The search box will float at the top of the screen when scrolling through the catalog list.
-
-### Viewing Catalog Analysis
-- Select the option to view the current analysis of the catalog.
-- The analysis will display the count of items in the catalog range and the maximum occurrence of three-character sequences within the catalog items.
+    - Carousel list count.
+    - Maximum three-character occurrence value in title of Carousel list.
 
 ## Libraries Used
 
-This application uses several libraries to provide a robust and efficient development experience. Below is a list of the libraries used in the Catalog App:
+This application uses several libraries to provide a robust and efficient development experience. Below is a list of the libraries used in the Carousel App:
 
 - **AndroidX Libraries:**
     - `androidx.core:core-ktx` - Provides Kotlin extensions for core Android components.
@@ -53,7 +39,7 @@ This application uses several libraries to provide a robust and efficient develo
     - `androidx.hilt:hilt-compiler` - Hilt compiler for AndroidX integration.
 
 
-These libraries enhance the functionality and maintainability of the Catalog App, making development more efficient and the app more reliable.
+These libraries enhance the functionality and maintainability of the Carousel App, making development more efficient and the app more reliable.
 
 
 ## Screenshots
@@ -66,4 +52,4 @@ These libraries enhance the functionality and maintainability of the Catalog App
 
 ---
 
-Thank you for using the Catalog App !!!
+Thank you for using the Carousel App !!!
