@@ -78,7 +78,7 @@
         android:layout_marginHorizontal="@dimen/dp_20"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:itemCount="10"
-        tools:listitem="@layout/catalog_range_card" />
+        tools:listitem="@layout/carousel_list_item" />
 
     <TextView
         android:id="@+id/tv_catalog_range_status"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Catalog</string>
+    <string name="app_name">Carousel</string>
     <string name="txt_error_occurred">Error occurred</string>
     <string name="txt_loading">Loading</string>
     <string name="txt_item_count">%1$s Count -> %2$d</string>
