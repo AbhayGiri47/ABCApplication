@@ -1,4 +1,4 @@
-package com.app.catalog.presentation
+package com.app.catalog.presentation.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,11 +10,10 @@ import com.app.catalog.domain.model.Resource
 import com.app.catalog.domain.usecase.GetCatalogAnalysisUseCase
 import com.app.catalog.domain.usecase.GetCatalogRangeUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -29,15 +28,18 @@ class HomePageViewModel @Inject constructor(
     private val _catalogList = MutableStateFlow<List<Catalog>>(emptyList())
     val catalogList get() = _catalogList.asStateFlow()
 
-    private val _catalogRange = MutableStateFlow<List<CatalogRange>?>(null)
+    private val _catalogRange = MutableStateFlow<List<CatalogRange>>(emptyList())
     val catalogRange get() = _catalogRange.asStateFlow()
 
     private val _catalogAnalysis =
         MutableStateFlow<Resource<CatalogAnalysis>>(Resource.loading())
     val catalogAnalysis get() = _catalogAnalysis.asStateFlow()
 
-    private val _showBottomSheet = MutableSharedFlow<Boolean>()
-    val showBottomSheet get() = _showBottomSheet.asSharedFlow()
+    private val _showBottomSheet = MutableStateFlow(false)
+    val showBottomSheet get() = _showBottomSheet.asStateFlow()
+
+    private val _catalogRangeLoading = MutableStateFlow(true)
+     val catalogRangeLoading get() = _catalogRangeLoading.asStateFlow()
 
 
     private var currentCarouselForDisplay = -1
@@ -53,7 +55,7 @@ class HomePageViewModel @Inject constructor(
         onSearchTriggered()
     }
 
-    private fun onSearchTriggered() {
+    fun onSearchTriggered() {
         getCatalogRange()
     }
 
@@ -69,7 +71,10 @@ class HomePageViewModel @Inject constructor(
         }
         val catalogType = catalogList.value[currentCarouselForDisplay].type
         val param = GetCatalogRangeUseCase.Params(catalogType, searchQuery.value)
-        homePageBaseUseCase.getCatalogRangeUseCase(param).collect {
+        homePageBaseUseCase.getCatalogRangeUseCase(param).onStart {
+            _catalogRangeLoading.emit(true)
+        }.collect {
+            _catalogRangeLoading.emit(false)
             _catalogRange.emit(it)
         }
     }
@@ -79,10 +84,13 @@ class HomePageViewModel @Inject constructor(
         startCatalogAnalysis()
     }
 
+    fun hideBottomSheet() = viewModelScope.launch {
+        _showBottomSheet.emit(false)
+    }
+
     private fun startCatalogAnalysis() = viewModelScope.launch {
         _catalogAnalysis.emit(Resource.loading())
-        val catalogType = catalogList.value[currentCarouselForDisplay].type
-        val params = GetCatalogAnalysisUseCase.Params(catalogRange.value, catalogType = catalogType)
+        val params = GetCatalogAnalysisUseCase.Params(catalogRange.value, catalogType = catalogList.value[currentCarouselForDisplay].type)
         homePageBaseUseCase.getCatalogAnalysisUseCase(params).catch {
             _catalogAnalysis.emit(Resource.error(it))
         }.collect {
