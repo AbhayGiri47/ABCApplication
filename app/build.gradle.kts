@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.app.catalog"
+    namespace = "com.app.carousel"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.app.catalog"
+        applicationId = "com.app.carousel"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
