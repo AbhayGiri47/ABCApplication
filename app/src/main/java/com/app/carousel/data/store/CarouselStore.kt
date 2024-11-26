@@ -7,468 +7,394 @@ import com.app.carousel.data.model.CarouselList
 import com.app.carousel.data.model.CarouselType
 
 class CarouselStore {
-    val sportsSubItems = listOf(
-        CarouselList(R.drawable.thumbnail_sports, "Football", "The world's most popular sport."),
-        CarouselList(R.drawable.thumbnail_sports, "Basketball", "A fast-paced and exciting sport."),
-        CarouselList(
-            R.drawable.thumbnail_sports,
-            "Cricket",
-            "A bat-and-ball game popular in many countries."
-        ),
-        CarouselList(R.drawable.thumbnail_sports, "Tennis", "A racket sport played on a court."),
-        CarouselList(
-            R.drawable.thumbnail_sports,
-            "Baseball",
-            "A bat-and-ball game popular in North America."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_sports,
-            "Volleyball",
-            "A team sport played with a ball and a net."
-        ),
-        CarouselList(R.drawable.thumbnail_sports, "Hockey", "A fast-paced ice or field sport."),
-        CarouselList(
-            R.drawable.thumbnail_sports,
-            "Golf",
-            "A club-and-ball sport played on a course."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_sports,
-            "Soccer",
-            "A popular team sport played with a ball and feet."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_sports,
-            "Rugby",
-            "A contact sport played with an oval ball."
-        ),
-        CarouselList(R.drawable.thumbnail_sports, "Boxing", "A combat sport involving punches."),
-        CarouselList(
-            R.drawable.thumbnail_sports,
-            "Wrestling",
-            "A combat sport involving grappling techniques."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_sports,
-            "Martial Arts",
-            "A variety of combat sports and self-defense techniques."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_sports,
-            "Swimming",
-            "An aquatic sport involving swimming strokes."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_sports,
-            "Track and Field",
-            "A sport involving running, jumping, and throwing events."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_sports,
-            "Gymnastics",
-            "A sport involving physical exercises and skills."
-        ),
-        CarouselList(R.drawable.thumbnail_sports, "Cycling", "A sport involving riding bicycles."),
-        CarouselList(
-            R.drawable.thumbnail_sports,
-            "Formula 1",
-            "A high-speed racing sport with open-wheel cars."
-        ),
-        CarouselList(R.drawable.thumbnail_sports, "MotoGP", "A motorcycle racing sport."),
-    )
 
-    val plantSubItems = listOf(
+    val houseSubItems = listOf(
         CarouselList(
-            R.drawable.thumbnail_plant,
-            "Snake Plant",
-            "A hardy indoor plant that thrives in low light."
+            R.drawable.thumbnail_house,
+            "Bungalow",
+            "A single-story house with a wide layout."
         ),
         CarouselList(
-            R.drawable.thumbnail_plant,
-            "Peace Lily",
-            "A beautiful plant that can help purify the air."
+            R.drawable.thumbnail_house,
+            "Villa",
+            "A luxurious and spacious standalone house."
         ),
         CarouselList(
-            R.drawable.thumbnail_plant,
-            "Monstera Deliciosa",
-            "A popular houseplant with large, split leaves."
+            R.drawable.thumbnail_house,
+            "Apartment",
+            "A residential unit in a multi-story building."
         ),
         CarouselList(
-            R.drawable.thumbnail_plant,
-            "Pothos",
-            "A versatile plant that can be grown in various ways."
+            R.drawable.thumbnail_house,
+            "Cottage",
+            "A small, cozy house, often in a rural setting."
         ),
         CarouselList(
-            R.drawable.thumbnail_plant,
-            "Aloe Vera",
-            "A succulent plant with medicinal properties."
+            R.drawable.thumbnail_house,
+            "Townhouse",
+            "A multi-story house sharing walls with adjacent homes."
+        ),
+        CarouselList(R.drawable.thumbnail_house, "Mansion", "A large, grand, and opulent house."),
+        CarouselList(
+            R.drawable.thumbnail_house,
+            "Duplex",
+            "A house divided into two separate units."
         ),
         CarouselList(
-            R.drawable.thumbnail_plant,
-            "Cactus",
-            "A drought-resistant plant with various shapes and sizes."
+            R.drawable.thumbnail_house,
+            "Farmhouse",
+            "A house on a farm, typically surrounded by land."
         ),
         CarouselList(
-            R.drawable.thumbnail_plant,
-            "Succulent",
-            "A diverse group of plants with fleshy leaves and stems."
+            R.drawable.thumbnail_house,
+            "Studio Apartment",
+            "A small, self-contained living space."
         ),
-        CarouselList(R.drawable.thumbnail_plant, "Bonsai", "Miniature trees grown in containers."),
-        CarouselList(R.drawable.thumbnail_plant, "Orchid", "A beautiful and exotic flower."),
-        CarouselList(R.drawable.thumbnail_plant, "Fern", "A delicate plant with feathery fronds."),
+        CarouselList(R.drawable.thumbnail_house, "Penthouse", "A luxurious top-floor apartment."),
         CarouselList(
-            R.drawable.thumbnail_plant,
-            "Rubber Plant",
-            "A large, leafy plant that can purify the air."
+            R.drawable.thumbnail_house,
+            "Cabin",
+            "A simple house, usually made of wood, in a remote area."
         ),
         CarouselList(
-            R.drawable.thumbnail_plant,
-            "Money Plant",
-            "A popular plant believed to bring good luck."
+            R.drawable.thumbnail_house,
+            "Loft",
+            "A large, open living space often converted from an industrial area."
         ),
         CarouselList(
-            R.drawable.thumbnail_plant,
-            "Spider Plant",
-            "A fast-growing plant that produces spiderettes."
+            R.drawable.thumbnail_house,
+            "Row House",
+            "A series of similar houses in a continuous row."
+        ),
+        CarouselList(R.drawable.thumbnail_house, "Treehouse", "A house built in or around a tree."),
+        CarouselList(
+            R.drawable.thumbnail_house,
+            "Mobile Home",
+            "A portable house that can be moved to different locations."
+        ),
+        CarouselList(R.drawable.thumbnail_house, "Tiny House", "A compact and minimalist home."),
+        CarouselList(
+            R.drawable.thumbnail_house,
+            "Beach House",
+            "A house located near a beach or coastline."
         ),
         CarouselList(
-            R.drawable.thumbnail_plant,
-            "ZZ Plant",
-            "A low-maintenance plant that can tolerate neglect."
+            R.drawable.thumbnail_house,
+            "Eco-friendly House",
+            "A house built with sustainable and green materials."
         ),
         CarouselList(
-            R.drawable.thumbnail_plant,
-            "Fiddle Leaf Fig",
-            "A stylish plant with large, fiddle-shaped leaves."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_plant,
-            "Chinese Money Plant",
-            "A unique plant with coin-shaped leaves."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_plant,
-            "Bird of Paradise",
-            "A tropical plant with striking orange and blue flowers."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_plant,
-            "Bromeliad",
-            "A colorful and exotic plant with unique flower spikes."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_plant,
-            "Philodendron",
-            "A versatile plant with many different varieties."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_plant,
-            "Snake Plant",
-            "A hardy indoor plant that thrives in low light."
+            R.drawable.thumbnail_house,
+            "Skyscraper Apartment",
+            "A residential unit in a high-rise building."
         )
     )
 
-    val indianFoodSubItems = listOf(
+    val birdSubItems = listOf(
         CarouselList(
-            R.drawable.thumbnail_indian_food,
-            "Idli Sambar",
-            "Soft, fluffy idlis served with spicy sambar and coconut chutney."
+            R.drawable.thumbnail_birds,
+            "Eagle",
+            "A powerful bird of prey with keen eyesight."
         ),
         CarouselList(
-            R.drawable.thumbnail_indian_food,
-            "Dosa",
-            "Crisp, savory crepes made with fermented batter, served with sambar and chutney."
+            R.drawable.thumbnail_birds,
+            "Parrot",
+            "A colorful bird known for mimicking sounds."
         ),
         CarouselList(
-            R.drawable.thumbnail_indian_food,
-            "Vada Pav",
-            "A popular street food consisting of a deep-fried potato patty served in a soft bun with spicy chutney."
+            R.drawable.thumbnail_birds,
+            "Sparrow",
+            "A small and agile bird commonly found worldwide."
         ),
         CarouselList(
-            R.drawable.thumbnail_indian_food,
-            "Pav Bhaji",
-            "A flavorful dish of mashed vegetables and spices served with soft buns."
+            R.drawable.thumbnail_birds,
+            "Owl",
+            "A nocturnal bird of prey with large eyes."
         ),
         CarouselList(
-            R.drawable.thumbnail_indian_food,
-            "Biryani",
-            "A fragrant rice dish with meat or vegetables, spices, and aromatic herbs."
+            R.drawable.thumbnail_birds,
+            "Peacock",
+            "A bird known for its vibrant tail feathers."
         ),
         CarouselList(
-            R.drawable.thumbnail_indian_food,
-            "Butter Chicken",
-            "Tender chicken pieces cooked in a creamy, buttery tomato sauce."
+            R.drawable.thumbnail_birds,
+            "Penguin",
+            "A flightless bird adapted to aquatic life."
         ),
         CarouselList(
-            R.drawable.thumbnail_indian_food,
-            "Paneer Tikka Masala",
-            "Cubes of Indian cottage cheese marinated in spices and grilled, served in a creamy tomato sauce."
+            R.drawable.thumbnail_birds,
+            "Hummingbird",
+            "A tiny bird known for its rapid wing movement."
         ),
         CarouselList(
-            R.drawable.thumbnail_indian_food,
-            "Chole Bhature",
-            "A popular North Indian dish consisting of spicy chickpeas and fluffy fried bread."
+            R.drawable.thumbnail_birds,
+            "Flamingo",
+            "A tall bird with pink plumage and long legs."
         ),
         CarouselList(
-            R.drawable.thumbnail_indian_food,
-            "Samosa",
-            "Deep-fried pastries filled with spiced potatoes and peas."
+            R.drawable.thumbnail_birds,
+            "Kingfisher",
+            "A bird known for its striking colors and fishing skills."
         ),
         CarouselList(
-            R.drawable.thumbnail_indian_food,
-            "Jalebi",
-            "Sweet, deep-fried pastries soaked in sugar syrup."
+            R.drawable.thumbnail_birds,
+            "Crow",
+            "A highly intelligent and adaptable bird."
         ),
         CarouselList(
-            R.drawable.thumbnail_indian_food,
-            "Gulab Jamun",
-            "Soft, sweet dumplings deep-fried and soaked in sugar syrup."
+            R.drawable.thumbnail_birds,
+            "Swan",
+            "A graceful water bird with white feathers."
         ),
         CarouselList(
-            R.drawable.thumbnail_indian_food,
-            "Ladoo",
-            "Sweet balls made with flour, ghee, and sugar, often flavored with nuts and spices."
+            R.drawable.thumbnail_birds,
+            "Woodpecker",
+            "A bird known for pecking at wood to find insects."
         ),
         CarouselList(
-            R.drawable.thumbnail_indian_food,
-            "Dhokla",
-            "A savory snack made from fermented batter, steamed and tempered with spices."
+            R.drawable.thumbnail_birds,
+            "Canary",
+            "A small bird known for its melodious singing."
         ),
         CarouselList(
-            R.drawable.thumbnail_indian_food,
-            "Pani Puri",
-            "A popular street food consisting of small, crispy puris filled with spiced water and various chutneys."
+            R.drawable.thumbnail_birds,
+            "Pigeon",
+            "A common city bird known for its adaptability."
         ),
         CarouselList(
-            R.drawable.thumbnail_indian_food,
-            "Misal Pav",
-            "A spicy, tangy dish made with sprouted lentils, served with pav (bread rolls)."
+            R.drawable.thumbnail_birds,
+            "Hawk",
+            "A bird of prey known for its speed and hunting skills."
         ),
         CarouselList(
-            R.drawable.thumbnail_indian_food,
-            "Poha",
-            "A light and healthy breakfast dish made with flattened rice, spices, and vegetables."
+            R.drawable.thumbnail_birds,
+            "Robin",
+            "A small bird with a distinctive red breast."
         ),
         CarouselList(
-            R.drawable.thumbnail_indian_food,
-            "Upma",
-            "A savory breakfast dish made with semolina, vegetables, and spices."
+            R.drawable.thumbnail_birds,
+            "Duck",
+            "A waterfowl known for its webbed feet and quacking sound."
+        ),
+        CarouselList(R.drawable.thumbnail_birds, "Toucan", "A bird with a large, colorful beak."),
+        CarouselList(
+            R.drawable.thumbnail_birds,
+            "Seagull",
+            "A coastal bird often seen near oceans and lakes."
         )
     )
 
-    val shoeSubItems = listOf(
+    val vehicleSubItems = listOf(
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "Nike Air Jordan 1",
-            "Iconic basketball shoe with a timeless design."
+            R.drawable.thumbnail_vehicle,
+            "Car",
+            "A four-wheeled motor vehicle for transportation."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "Adidas Yeezy Boost 350 V2",
-            "Popular sneaker collaboration with Kanye West."
+            R.drawable.thumbnail_vehicle,
+            "Motorcycle",
+            "A two-wheeled motorized vehicle."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "New Balance 574",
-            "Classic lifestyle sneaker with a comfortable fit."
+            R.drawable.thumbnail_vehicle,
+            "Bicycle",
+            "A two-wheeled pedal-powered vehicle."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "Converse Chuck Taylor All Star",
-            "Iconic canvas sneaker with a timeless design."
+            R.drawable.thumbnail_vehicle,
+            "Truck",
+            "A large motor vehicle for transporting goods."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "Vans Old Skool",
-            "Classic skate shoe with a simple design."
+            R.drawable.thumbnail_vehicle,
+            "Bus",
+            "A large vehicle for public or private passenger transport."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "Puma Suede Classic",
-            "Classic suede sneaker with a retro look."
+            R.drawable.thumbnail_vehicle,
+            "Van",
+            "A medium-sized motor vehicle for transporting goods or people."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "Nike Air Force 1",
-            "Classic basketball shoe with a versatile design."
+            R.drawable.thumbnail_vehicle,
+            "Train",
+            "A vehicle that runs on tracks for mass transport."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "Adidas Stan Smith",
-            "Classic tennis shoe with a minimalist design."
+            R.drawable.thumbnail_vehicle,
+            "Airplane",
+            "An aircraft designed for air travel."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "Reebok Classic Leather",
-            "Classic leather sneaker with a retro look."
+            R.drawable.thumbnail_vehicle,
+            "Helicopter",
+            "A rotary-winged aircraft for versatile transport."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "Nike Dunk Low",
-            "Basketball-inspired sneaker with a variety of colorways."
+            R.drawable.thumbnail_vehicle,
+            "Boat",
+            "A watercraft designed for travel on water."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "Adidas Superstar",
-            "Classic basketball shoe with a shell-toe design."
+            R.drawable.thumbnail_vehicle,
+            "Ship",
+            "A large vessel for transporting goods or people across water."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "New Balance 990v5",
-            "Premium running shoe with advanced technology."
+            R.drawable.thumbnail_vehicle,
+            "Submarine",
+            "An underwater vehicle for exploration or military use."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "Asics Gel-Lyte III",
-            "Classic running shoe with a unique split tongue design."
+            R.drawable.thumbnail_vehicle,
+            "Scooter",
+            "A lightweight motorized two-wheeled vehicle."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "Saucony Jazz Court",
-            "Classic tennis shoe with a retro look."
+            R.drawable.thumbnail_vehicle,
+            "Tram",
+            "A rail vehicle used for urban public transport."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "Diadora N9000",
-            "Italian-made running shoe with a retro design."
+            R.drawable.thumbnail_vehicle,
+            "RV",
+            "A recreational vehicle for traveling and living."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "Salomon XT-6",
-            "Popular trail running shoe with a unique design."
+            R.drawable.thumbnail_vehicle,
+            "SUV",
+            "A sport utility vehicle designed for on-road and off-road use."
+        ),
+        CarouselList(R.drawable.thumbnail_vehicle, "Convertible", "A car with a retractable roof."),
+        CarouselList(R.drawable.thumbnail_vehicle, "Electric Car", "A car powered by electricity."),
+        CarouselList(
+            R.drawable.thumbnail_vehicle,
+            "Hovercraft",
+            "A vehicle that glides over surfaces on a cushion of air."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "Hoka One One Clifton 9",
-            "Comfortable running shoe with maximum cushioning."
+            R.drawable.thumbnail_vehicle,
+            "Jet Ski",
+            "A small watercraft for recreational use."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "Brooks Ghost 15",
-            "Smooth running shoe with a neutral ride."
+            R.drawable.thumbnail_vehicle,
+            "Bulldozer",
+            "A powerful vehicle for construction work."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "Nike Air Max 90",
-            "Iconic running shoe with a visible Air Max unit."
+            R.drawable.thumbnail_vehicle,
+            "Tractor",
+            "A vehicle used in agriculture for pulling equipment."
+        ),
+    )
+
+    val clothingItems = listOf(
+        CarouselList(R.drawable.thumbnail_clothing, "T-Shirts", "Casual and versatile upper wear."),
+        CarouselList(R.drawable.thumbnail_clothing, "Jeans", "Durable and comfortable denim pants."),
+        CarouselList(
+            R.drawable.thumbnail_clothing,
+            "Jackets",
+            "Outerwear for warmth and style."
+        ),
+        CarouselList(R.drawable.thumbnail_clothing, "Shirts", "Formal or casual upper wear."),
+        CarouselList(
+            R.drawable.thumbnail_clothing,
+            "Dresses",
+            "One-piece outfits for various occasions."
         ),
         CarouselList(
-            R.drawable.thumbnail_shoe,
-            "Adidas Ultraboost 23",
-            "Popular running shoe with Boost midsole technology."
+            R.drawable.thumbnail_clothing,
+            "Skirts",
+            "Versatile bottom wear for women."
+        ),
+        CarouselList(R.drawable.thumbnail_clothing, "Shorts", "Comfortable and casual bottom wear."),
+        CarouselList(
+            R.drawable.thumbnail_clothing,
+            "Sweaters",
+            "Knitted upper wear for colder weather."
+        ),
+        CarouselList(
+            R.drawable.thumbnail_clothing,
+            "Hoodies",
+            "Casual and cozy sweatshirts with hoods."
+        ),
+        CarouselList(
+            R.drawable.thumbnail_clothing,
+            "Blazers",
+            "Formal jackets for business or events."
+        ),
+        CarouselList(R.drawable.thumbnail_clothing, "Coats", "Long outerwear for warmth."),
+        CarouselList(
+            R.drawable.thumbnail_clothing,
+            "Trousers",
+            "Formal or casual pants for everyday wear."
+        ),
+        CarouselList(
+            R.drawable.thumbnail_clothing,
+            "Suits",
+            "Matching formal jackets and trousers."
+        ),
+        CarouselList(
+            R.drawable.thumbnail_clothing,
+            "Pajamas",
+            "Comfortable sleepwear for relaxation."
+        ),
+        CarouselList(
+            R.drawable.thumbnail_clothing,
+            "Activewear",
+            "Clothing for workouts and sports."
+        ),
+        CarouselList(
+            R.drawable.thumbnail_clothing,
+            "Swimwear",
+            "Clothing designed for swimming activities."
+        ),
+        CarouselList(
+            R.drawable.thumbnail_clothing,
+            "Scarves",
+            "Accessories for warmth or fashion."
+        ),
+        CarouselList(
+            R.drawable.thumbnail_clothing,
+            "Hats",
+            "Headwear for style or sun protection."
+        ),
+        CarouselList(
+            R.drawable.thumbnail_clothing,
+            "Gloves",
+            "Handwear for warmth or protection."
         )
     )
 
-    val countrySubItems = listOf(
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "United States",
-            "A diverse country with a rich history and culture."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "Canada",
-            "A vast country with stunning natural beauty."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "Mexico",
-            "A colorful country with ancient ruins and vibrant culture."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "Brazil",
-            "A diverse country with stunning beaches and rainforests."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "Argentina",
-            "A country with stunning landscapes and a rich cultural heritage."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "Australia",
-            "A unique country with diverse wildlife and stunning landscapes."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "New Zealand",
-            "A beautiful country with stunning natural beauty and friendly people."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "Japan",
-            "A country with a rich history and culture, known for its technology and cuisine."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "China",
-            "The world's most populous country with a long history and diverse culture."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "India",
-            "A diverse country with a rich cultural heritage and ancient history."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "Russia",
-            "The largest country in the world with a vast and diverse landscape."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "Egypt",
-            "A country with ancient pyramids and a rich history."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "South Africa",
-            "A country with stunning wildlife and diverse cultures."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "Italy",
-            "A country with beautiful landscapes, historic cities, and delicious food."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "France",
-            "A country with a rich history, culture, and cuisine."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "Germany",
-            "A country with a strong economy and a rich history."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "United Kingdom",
-            "A country with a rich history and culture, known for its monarchy and literature."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "Spain",
-            "A country with beautiful beaches, historic cities, and delicious food."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "Greece",
-            "A country with ancient ruins and beautiful islands."
-        ),
-        CarouselList(
-            R.drawable.thumbnail_country,
-            "Turkey",
-            "A country that bridges Europe and Asia, with a rich history and diverse culture."
-        )
+    val treeSubItems = listOf(
+        CarouselList(R.drawable.thumbnail_trees, "Oak", "A large, strong tree with lobed leaves."),
+        CarouselList(R.drawable.thumbnail_trees, "Pine", "An evergreen tree with needle-like leaves."),
+        CarouselList(R.drawable.thumbnail_trees, "Maple", "Known for its distinctive leaves and syrup."),
+        CarouselList(R.drawable.thumbnail_trees, "Birch", "A tree with white bark and delicate leaves."),
+        CarouselList(R.drawable.thumbnail_trees, "Willow", "A tree with long, drooping branches."),
+        CarouselList(R.drawable.thumbnail_trees, "Cherry Blossom", "A tree famous for its pink and white blossoms."),
+        CarouselList(R.drawable.thumbnail_trees, "Redwood", "One of the tallest trees in the world."),
+        CarouselList(R.drawable.thumbnail_trees, "Cedar", "A coniferous tree with aromatic wood."),
+        CarouselList(R.drawable.thumbnail_trees, "Baobab", "A tree with a thick trunk, native to Africa."),
+        CarouselList(R.drawable.thumbnail_trees, "Palm", "A tropical tree with long, feathery leaves."),
+        CarouselList(R.drawable.thumbnail_trees, "Aspen", "A tree with trembling leaves that shimmer in the wind."),
+        CarouselList(R.drawable.thumbnail_trees, "Cypress", "A conical tree often associated with Mediterranean regions."),
+        CarouselList(R.drawable.thumbnail_trees, "Eucalyptus", "A fast-growing tree with aromatic leaves."),
+        CarouselList(R.drawable.thumbnail_trees, "Banyan", "A large tree with aerial roots."),
+        CarouselList(R.drawable.thumbnail_trees, "Magnolia", "A tree with large, fragrant flowers."),
+        CarouselList(R.drawable.thumbnail_trees, "Spruce", "A coniferous tree with a pyramid shape."),
+        CarouselList(R.drawable.thumbnail_trees, "Fir", "An evergreen tree with flat needle-like leaves."),
+        CarouselList(R.drawable.thumbnail_trees, "Sequoia", "A massive tree native to California."),
+        CarouselList(R.drawable.thumbnail_trees, "Dogwood", "A tree with attractive flowers and colorful foliage.")
     )
-
 
     val carouselList = listOf(
-        Carousel(R.drawable.sports, CarouselType.SPORTS),
-        Carousel(R.drawable.plant, CarouselType.PLANT),
-        Carousel(R.drawable.indian_food, CarouselType.FOOD),
-        Carousel(R.drawable.shoe, CarouselType.SHOE),
-        Carousel(R.drawable.country, CarouselType.COUNTRY)
+        Carousel(R.drawable.house, CarouselType.HOUSE),
+        Carousel(R.drawable.birds, CarouselType.BIRDS),
+        Carousel(R.drawable.vehicle, CarouselType.VEHICLE),
+        Carousel(R.drawable.clothes, CarouselType.CLOTHES),
+        Carousel(R.drawable.trees, CarouselType.TREES)
     )
 
 

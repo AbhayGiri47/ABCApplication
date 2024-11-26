@@ -15,11 +15,11 @@ class CarouselRepositoryImpl @Inject constructor(private val dataStore: Carousel
 
     override suspend fun getCarouselList(carouselType: CarouselType) = flow {
         val response = when (carouselType) {
-            CarouselType.SPORTS -> dataStore.sportsSubItems
-            CarouselType.PLANT -> dataStore.plantSubItems
-            CarouselType.FOOD -> dataStore.indianFoodSubItems
-            CarouselType.SHOE -> dataStore.shoeSubItems
-            CarouselType.COUNTRY -> dataStore.countrySubItems
+            CarouselType.HOUSE -> dataStore.houseSubItems
+            CarouselType.BIRDS -> dataStore.birdSubItems
+            CarouselType.VEHICLE -> dataStore.vehicleSubItems
+            CarouselType.CLOTHES -> dataStore.clothingItems
+            CarouselType.TREES -> dataStore.treeSubItems
         }
         emit(response)
     }

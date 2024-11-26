@@ -4,7 +4,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.app.carousel.data.model.Carousel
 import com.app.carousel.data.model.CarouselList
+import com.app.carousel.domain.CoroutinesDispatcherProvider
 import com.app.carousel.domain.model.CarouselAnalysis
+import com.app.carousel.domain.model.CarouselAnalysisRequest
+import com.app.carousel.domain.model.CarouselListRequest
 import com.app.carousel.domain.model.HomePageBaseUseCase
 import com.app.carousel.domain.model.Resource
 import com.app.carousel.domain.usecase.GetCarouselAnalysisUseCase
@@ -19,6 +22,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CarouselViewModel @Inject constructor(
+    private val dispatcher: CoroutinesDispatcherProvider,
     private val homePageBaseUseCase: HomePageBaseUseCase
 ) : ViewModel() {
 
@@ -59,19 +63,24 @@ class CarouselViewModel @Inject constructor(
         getCarouselList()
     }
 
-    private fun getCarouselImage() = viewModelScope.launch {
-        homePageBaseUseCase.getCarouselImageUseCase(Unit).collect {
+    private fun getCarouselImage() = viewModelScope.launch(dispatcher.io) {
+        homePageBaseUseCase.getCarouselImageUseCase.getCarouselImage().collect {
             _carouselImage.emit(it)
         }
     }
 
-    private fun getCarouselList() = viewModelScope.launch {
+    private fun getCarouselList() = viewModelScope.launch(dispatcher.io) {
         if (currentCarouselForDisplay < 0 || carouselImage.value.isEmpty()) {
             return@launch
         }
         val carouselType = carouselImage.value[currentCarouselForDisplay].type
-        val param = GetCarouselListUseCase.Params(carouselType, searchQuery.value)
-        homePageBaseUseCase.getCarouselListUseCase(param).onStart {
+
+        homePageBaseUseCase.getCarouselListUseCase.getCarouselList(
+            CarouselListRequest(
+                carouselType,
+                searchQuery.value
+            )
+        ).onStart {
             _carouselListLoading.emit(true)
         }.collect {
             _carouselListLoading.emit(false)
@@ -79,19 +88,23 @@ class CarouselViewModel @Inject constructor(
         }
     }
 
-    fun showBottomSheet() = viewModelScope.launch {
+    fun showBottomSheet() = viewModelScope.launch(dispatcher.io) {
         _showBottomSheet.emit(true)
         startCarouselAnalysis()
     }
 
-    fun hideBottomSheet() = viewModelScope.launch {
+    fun hideBottomSheet() = viewModelScope.launch(dispatcher.io) {
         _showBottomSheet.emit(false)
     }
 
-    private fun startCarouselAnalysis() = viewModelScope.launch {
+    private fun startCarouselAnalysis() = viewModelScope.launch(dispatcher.computation) {
         _carouselAnalysis.emit(Resource.loading())
-        val params = GetCarouselAnalysisUseCase.Params(carouselList.value, carouselType = carouselImage.value[currentCarouselForDisplay].type)
-        homePageBaseUseCase.getCarouselAnalysisUseCase(params).catch {
+        homePageBaseUseCase.getCarouselAnalysisUseCase.getCarouselAnalysisData(
+            CarouselAnalysisRequest(
+                carouselList.value,
+                catalogType = carouselImage.value[currentCarouselForDisplay].type
+            )
+        ).catch {
             _carouselAnalysis.emit(Resource.error(it))
         }.collect {
             _carouselAnalysis.emit(Resource.success(it))
