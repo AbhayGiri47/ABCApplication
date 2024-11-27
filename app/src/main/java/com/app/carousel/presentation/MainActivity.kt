@@ -1,6 +1,8 @@
 package com.app.carousel.presentation
 
 
+import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.activity.viewModels
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
@@ -23,6 +25,15 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
+    private val params = LinearLayout.LayoutParams(
+        LinearLayout.LayoutParams.WRAP_CONTENT,
+        LinearLayout.LayoutParams.WRAP_CONTENT
+    ).apply {
+        setMargins(12,0,12,0)
+    }
+
+    private var dotsImage = mutableListOf<ImageView>()
+
     override fun getViewBinding(): ActivityMainBinding {
         return ActivityMainBinding.inflate(layoutInflater)
     }
@@ -33,6 +44,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 launch {
                     viewModel.carouselImage.collectLatest {
                         carouselImageAdapter.submitList(it)
+                        setupIndicator(it.size)
                     }
                 }
                 launch {
@@ -60,14 +72,21 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
     }
 
+    private fun setupIndicator(size: Int) {
+        for (i in 0 until size) {
+            val dot = ImageView(this@MainActivity).apply {
+                setImageResource(R.drawable.unselected_dot)
+                layoutParams = params
+            }
+            dotsImage.add(dot)
+            binding.slideDotLL.addView(dot)
+        }
+        dotsImage[0].setImageResource(R.drawable.selected_dot)
+    }
+
     override fun initialize() {
         with(binding) {
             viewpagerCarousel.adapter = carouselImageAdapter
-            TabLayoutMediator(
-                tabLayoutDotIndicator,
-                viewpagerCarousel
-            ) { _, _ -> }.attach()
-
             rvCarouselSubItemList.layoutManager = LinearLayoutManager(this@MainActivity)
             rvCarouselSubItemList.adapter = carouselListAdapter
 
@@ -98,6 +117,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         override fun onPageSelected(position: Int) {
             binding.searchText.clearFocus()
             viewModel.onCarouselChanged(position)
+            dotsImage.forEachIndexed { index, imageView ->
+                imageView.setImageResource(
+                    if (index == position) R.drawable.selected_dot else R.drawable.unselected_dot
+                )
+            }
         }
     }
 

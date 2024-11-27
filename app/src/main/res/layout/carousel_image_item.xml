@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="@dimen/dp_30"
+    android:layout_marginHorizontal="@dimen/dp_20"
     android:scaleType="centerCrop"
     app:shapeAppearanceOverlay="@style/CarouselRoundedCornerImageView"
     tools:src="@drawable/ic_launcher_background" />

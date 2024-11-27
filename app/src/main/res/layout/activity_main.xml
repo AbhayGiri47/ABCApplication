@@ -37,19 +37,19 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/tab_layout_dot_indicator"
+                <LinearLayout
+                    android:id="@+id/slideDotLL"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal|bottom"
-                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/viewpager_carousel"
-                    app:tabBackground="@drawable/dot_indicator_selector"
-                    app:tabGravity="center"
-                    app:tabIndicatorHeight="@dimen/dp_0"
-                    app:tabMode="fixed" />
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -57,7 +57,7 @@
             android:id="@+id/search_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/dp_30"
+            android:layout_marginHorizontal="@dimen/dp_20"
             android:layout_marginVertical="@dimen/dp_10"
             android:background="@drawable/search_text_background"
             android:clickable="true"
